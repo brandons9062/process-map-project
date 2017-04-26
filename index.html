@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html ng-app="mainApp">
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainCtrl">
+
+    <div class="circles">
+        <div class="circles" ng-show="showNewClientCircle" ng-click="newClientClick()">
+            <p class="circle-text">{{templateHolder}}</p>
+        </div>
+
+
+        <div id="client-info-form" ng-show="showClientInfoForm">
+            <div class="client-info-form-header">
+                <h1 class="client-info-header">Client Information</h1>
+            </div>
+            <div class="form-input-field">
+                <h3>Client ID</h3>
+                <input type="number" ng-model="c.clientIdInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Client Name</h3>
+                <input type="text" ng-model="c.clientNameInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Address</h3>
+                <input type="text" ng-model="c.clientAddressInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Total ARR</h3>
+                <input type="number" ng-model="c.clientTotalArrInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Primary Contact Name</h3>
+                <input type="text" ng-model="c.clientPrimaryContactNameInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Number of Employees</h3>
+                <input type="number" ng-model="c.clientNumberOfEmployeesInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>GTM</h3>
+                <select ng-model="c.clientGtmInput">
+                    <option>EWM</option>
+                    <option>MWM</option>
+                    <option>SMB</option>
+                </select>
+            </div>
+            <div class="form-input-field">
+                <h3>Packages Purchased</h3>
+                <select multiple ng-model="c.clientPackagesInput">
+                    <option>Tier 1 Implementation</option>
+                    <option>Tier 2 Implementation</option>
+                    <option>Premium Support</option>
+                    <option>Standard Support</option>
+                    <option>Tier 1 Education</option>
+                    <option>Tier 2 Education</option>
+                    <option>Special Rap Package</option>
+                    <option>Totally Tubular Package</option>
+                    <option>Shut Yo Mouf Package</option>
+                </select>
+            </div>
+            <div class="form-input-field">
+                <h3>Sales Rep</h3>
+                <input type="text" ng-model="c.clientSalesRepInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Region</h3>
+                <input type="text" ng-model="c.clientRegionInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>Implementation Team</h3>
+                <input type="text" ng-model="c.clientImplementationTeamInput" />
+            </div>
+            <div class="form-input-field">
+                <h3>CSM</h3>
+                <input type="text" ng-model="c.clientCsmInput" />
+            </div>
+            <button ng-click="submitNewClientInfo(c)">Submit</button>
+            <button ng-click="newClientClick()">Back</button>
+        </div>
+
+        <!--
+        <div class="circles" id="cloned-process-circle">
+            <div ng-click="newProcessClick()">
+                <p class="circle-text"></p>
+            </div>
+        </div>
+-->
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/clientService.js"></script>
+</body>
+
+</html>
